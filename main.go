@@ -78,17 +78,8 @@ func main() {
 	} else {
 		mainFields:= []Field{
 			{
-				Title: "Ref",
-				Value: os.Getenv("GITHUB_REF"),
-				Short: true,
-			},                {
-				Title: "Event",
-				Value: os.Getenv("GITHUB_EVENT_NAME"),
-				Short: true,
-			},
-			{
 				Title: "Actions URL",
-				Value: "https://github.com/" + os.Getenv("GITHUB_REPOSITORY") + "/commit/" + os.Getenv("GITHUB_SHA") + "/checks",
+				Value: "https://github.com/" + os.Getenv("GITHUB_REPOSITORY") + "/pull/" + os.Getenv("PULL_REQUEST_NUMBER") + "/checks",
 				Short: false,
 			},
 			{
