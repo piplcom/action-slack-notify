@@ -22,6 +22,9 @@ const (
 	EnvHostName       = "HOST_NAME"
 	EnvDepolyPath     = "DEPLOY_PATH"
 	EnvMinimal        = "MSG_MINIMAL"
+	EnvPSEUrl         = "PSE_URL"
+	EnvPSEIP          = "PSE_IP" 
+	EnvPullRequestURL = "PULL_REQUEST_URL"
 )
 
 type Webhook struct {
@@ -80,6 +83,21 @@ func main() {
 			{
 				Title: "Actions URL",
 				Value: "https://github.com/" + os.Getenv("GITHUB_REPOSITORY") + "/pull/" + os.Getenv("PULL_REQUEST_NUMBER") + "/checks",
+				Short: false,
+			},
+			{
+				Title: "Pull Request URL",
+				Value: os.Getenv(EnvPullRequestURL),
+				Short: false,
+			},
+			{
+				Title: "PSE URL",
+				Value: os.Getenv(EnvPSEUrl),
+				Short: false,
+			},
+			{
+				Title: "PSE IP",
+				Value: os.Getenv(EnvPSEIP),
 				Short: false,
 			},
 			{
