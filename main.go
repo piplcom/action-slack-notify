@@ -26,6 +26,7 @@ const (
 	EnvPSEIP          = "PSE_IP" 
 	EnvPullRequestURL = "PULL_REQUEST_URL"
 	EnvPSEVersion     = "PSE_VERSION"
+	EnvPSESwagger     = "PSE_SWAGGER"
 )
 
 type Webhook struct {
@@ -101,6 +102,11 @@ func main() {
 				Value: os.Getenv(EnvPSEIP),
 				Short: false,
 			},
+			{
+      	Title: "PSE Swagger",
+      	Value: os.Getenv(EnvPSESwagger),
+      	Short: false,
+      },
 			{
 				Title: "PSE Version",
 				Value: os.Getenv(EnvPSEVersion),
